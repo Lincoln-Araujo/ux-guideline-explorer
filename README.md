@@ -1,5 +1,10 @@
 ## Next.js + Tailwind Demo — UX Guidelines Explorer
 
+![Next.js](https://img.shields.io/badge/Next.js-13+-000000?logo=nextdotjs&logoColor=white&style=for-the-badge)
+![TypeScript](https://img.shields.io/badge/TypeScript-5+-3178C6?logo=typescript&logoColor=white&style=for-the-badge)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3+-38B2AC?logo=tailwindcss&logoColor=white&style=for-the-badge)
+![Vitest](https://img.shields.io/badge/Tested_with-Vitest-6E9F18?logo=vitest&logoColor=white&style=for-the-badge)
+
 **Stack:** Next.js (App Router), TypeScript, Tailwind CSS  
 **Focus:** Accessibility (WCAG), discoverability (search/filter/sort), reusable components
 
@@ -27,6 +32,7 @@ Demonstrates my ability to build accessible, component-based UIs with modern fra
 ```bash
 pnpm install    # or npm/yarn
 pnpm dev        # http://localhost:3000
+```
 
 **Project structure**
 /app
