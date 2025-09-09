@@ -1,0 +1,80 @@
+[
+  {
+    "id": "checkout-address-autofill",
+    "title": "Offer address autofill at checkout",
+    "category": "Checkout",
+    "severity": "High",
+    "summary": "Reduce friction by offering secure address autofill.",
+    "dos": ["Use native autocomplete attributes", "Validate but don’t over-block"],
+    "donts": ["Force account creation", "Clear fields on validation error"],
+    "examples": {
+      "good": "Single-page checkout with inline validation and browser autofill.",
+      "bad": "Multi-step flow requiring account before autofill is available."
+    }
+  },
+  {
+    "id": "search-empty-state",
+    "title": "Provide helpful empty states for zero results",
+    "category": "Search",
+    "severity": "Medium",
+    "summary": "Guide users with suggestions when no results are found.",
+    "dos": ["Offer filters to broaden results", "Show popular queries"],
+    "donts": ["Show a dead-end message"],
+    "examples": {
+      "good": "‘No results — try removing filters’ + quick suggestions.",
+      "bad": "‘0 results’ with no next steps."
+    }
+  },
+  {
+    "id": "navigation-breadcrumbs",
+    "title": "Show breadcrumbs on deep pages",
+    "category": "Navigation",
+    "severity": "Low",
+    "summary": "Help users understand where they are and go back quickly.",
+    "dos": ["Use semantic nav", "Make last item non-clickable"],
+    "donts": ["Hide on mobile", "Duplicate the page title"],
+    "examples": {
+      "good": "Collapsed breadcrumb on small screens, expandable on tap.",
+      "bad": "Breadcrumbs that scroll horizontally without indicators."
+    }
+  },
+  {
+    "id": "form-inline-validation",
+    "title": "Provide inline validation for form fields",
+    "category": "Forms",
+    "severity": "High",
+    "summary": "Help users correct mistakes faster by validating as they type.",
+    "dos": ["Show errors near the field", "Use clear, specific messages"],
+    "donts": ["Only show errors after full form submission", "Use vague messages like 'invalid'"],
+    "examples": {
+      "good": "‘Password must include 8+ characters, 1 uppercase, 1 number’ shown in real time.",
+      "bad": "Form reloads with generic 'Password error' at the top."
+    }
+  },
+  {
+    "id": "mobile-thumb-targets",
+    "title": "Ensure mobile tap targets are large enough",
+    "category": "Mobile",
+    "severity": "Medium",
+    "summary": "Buttons and links should be comfortable to tap without zooming.",
+    "dos": ["Min. 44px by 44px targets", "Provide spacing between controls"],
+    "donts": ["Tiny icons packed too closely", "Rely on hover-only states"],
+    "examples": {
+      "good": "Large primary CTA button with 16px padding.",
+      "bad": "Clustered inline links with no spacing."
+    }
+  },
+  {
+    "id": "content-loading-feedback",
+    "title": "Give users feedback during content loading",
+    "category": "Feedback",
+    "severity": "Low",
+    "summary": "Show skeletons, spinners, or messages so users know the system is working.",
+    "dos": ["Use skeleton screens", "Provide estimated wait times"],
+    "donts": ["Leave blank screens", "Freeze UI with no feedback"],
+    "examples": {
+      "good": "Skeleton cards displayed until content loads.",
+      "bad": "White screen with no indicator for 5+ seconds."
+    }
+  }
+]

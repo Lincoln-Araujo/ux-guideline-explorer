@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Next.js + Tailwind Demo — UX Guidelines Explorer
 
-## Getting Started
+**Stack:** Next.js (App Router), TypeScript, Tailwind CSS  
+**Focus:** Accessibility (WCAG), discoverability (search/filter/sort), reusable components
 
-First, run the development server:
+**What it does**  
+A tiny catalog that lists UX guidelines with **search**, **filters**, **sorting**, and **pagination**. Each item has a detail page with **Do/Don’t** and **Good vs Bad** examples. Includes a playful **/scan** page that “analyzes” a URL and returns mock findings mapped to the guidelines.
 
+**Why it matters**  
+Demonstrates my ability to build accessible, component-based UIs with modern frameworks (Next.js + Tailwind), structure client-side state for discoverability, and iterate quickly on product UX.
+
+**Features**
+- 🔎 Search by title/summary  
+- 🏷️ Filter by **Category** (Checkout, Search, Navigation) & **Severity** (High/Medium/Low)  
+- 🔤 Sort by severity or title  
+- 📄 Pagination (keyboard accessible)  
+- 🧭 Detail pages with Do/Don’t & examples  
+- 🧪 **/scan** URL “scanner” (mock) that returns relevant guidelines
+
+**Accessibility highlights**
+- Skip link, semantic landmarks (`header`, `main`, `nav`)  
+- Labeled inputs, visible focus states (`:focus-visible`)  
+- `aria-live="polite"` for dynamic results count  
+- Keyboard-friendly controls and pagination
+
+**Run locally**
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+pnpm install    # or npm/yarn
+pnpm dev        # http://localhost:3000
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Project structure**
+/app
+  /api/guidelines/route.ts   # optional JSON API
+  /guidelines/page.tsx       # list + search/filter/sort/pagination
+  /guidelines/[id]/page.tsx  # detail
+  /scan/page.tsx             # mock URL scanner
+  /page.tsx                  # landing
+/components
+  Badge.tsx  Card.tsx  ExampleBlock.tsx  FilterPills.tsx
+  Header.tsx  Pagination.tsx  SearchBar.tsx
+/data
+  guidelines.json
+/lib
+  filter.ts                  # pure filter/sort/paginate functions
+/styles
+  globals.css                # a11y helpers + Tailwind base
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

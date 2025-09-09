@@ -1,0 +1,20 @@
+import Link from "next/link";
+import Badge from "./Badge";
+import type { Guideline } from "@/lib/filter";
+
+export default function Card({ g }: { g: Guideline }) {
+  return (
+    <article className="rounded border p-4 shadow-sm">
+      <div className="flex items-center gap-2">
+        <Badge>{g.category}</Badge>
+        <Badge>{g.severity}</Badge>
+      </div>
+      <h3 className="mt-2 text-lg font-semibold">
+        <Link href={`/guidelines/${g.id}`} className="hover:underline">
+          {g.title}
+        </Link>
+      </h3>
+      <p className="mt-1 text-sm text-gray-700">{g.summary}</p>
+    </article>
+  );
+}

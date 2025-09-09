@@ -1,0 +1,96 @@
+"use client";
+
+import { useMemo, useState } from "react";
+import data from "@/data/guidelines.json";
+import { applyFilters, type Guideline } from "@/lib/filter";
+import SearchBar from "@/components/SearchBar";
+import FilterPills from "@/components/FilterPills";
+import Pagination from "@/components/Pagination";
+import Card from "@/components/Card";
+
+export default function GuidelinesPage() {
+  const [q, setQ] = useState("");
+  const [category, setCategory] = useState<string>("All");
+  const [severity, setSeverity] = useState<"All" | "High" | "Medium" | "Low">(
+    "All"
+  );
+  const [sort, setSort] = useState<"severity" | "title">("severity");
+  const [page, setPage] = useState(1);
+  const perPage = 6;
+
+  const { items, total } = useMemo(
+    () =>
+      applyFilters(data as Guideline[], {
+        q,
+        category,
+        severity,
+        sort,
+        page,
+        perPage,
+      }),
+    [q, category, severity, sort, page]
+  );
+
+  // reset to first page when criteria change
+  function resetPaging() {
+    setPage(1);
+  }
+
+  return (
+    <section className="space-y-6">
+      <h1 className="text-2xl font-semibold">Guidelines</h1>
+
+      <div className="grid gap-4 sm:grid-cols-2">
+        <SearchBar
+          value={q}
+          onChange={(v) => {
+            setQ(v);
+            resetPaging();
+          }}
+        />
+        <FilterPills
+          category={category}
+          setCategory={(c) => {
+            setCategory(c);
+            resetPaging();
+          }}
+          severity={severity}
+          setSeverity={(s) => {
+            setSeverity(s);
+            resetPaging();
+          }}
+          sort={sort}
+          setSort={(s) => {
+            setSort(s);
+            resetPaging();
+          }}
+        />
+      </div>
+
+      <p aria-live="polite" className="text-sm text-gray-700">
+        Showing {total} guideline{total === 1 ? "" : "s"}
+      </p>
+
+      {total === 0 ? (
+        <div className="rounded border p-6 text-center">
+          <p>No guidelines found. Try clearing filters or broadening your search.</p>
+        </div>
+      ) : (
+        <>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {items.map((g) => (
+              <Card key={g.id} g={g} />
+            ))}
+          </div>
+
+          <Pagination
+            page={page}
+            perPage={perPage}
+            total={total}
+            onPageChange={setPage}
+          />
+        </>
+      )}
+    </section>
+  );
+}

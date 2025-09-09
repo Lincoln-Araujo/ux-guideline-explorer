@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Better focus visibility */
+:focus-visible {
+  outline: 2px solid transparent;
+  box-shadow: 0 0 0 3px rgb(59 130 246 / 0.6); /* Tailwind's ring-ish */
+}
+
+/* Improve readability */
+html {
+  scroll-behavior: smooth;
+}
