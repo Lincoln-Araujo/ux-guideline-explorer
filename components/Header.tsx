@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import arrowRight from "@/public/arrow-right.svg";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -15,16 +16,16 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full">
+    <header className="fixed top-0 z-50 w-full">
       <a href="#main" className="sr-only focus:not-sr-only focus:p-2">
         Skip to content
       </a>
       <nav
-        className="mx-auto flex items-center justify-between"
+        className="mx-auto flex items-center justify-between bg-[#B45253] md:bg-transparent"
         aria-label="Primary"
       >
         <Link href="/" 
-          className="bg-[#B45253] text-white font-medium tracking-tight 
+          className="md:bg-[#B45253] text-white font-medium tracking-tight 
                     px-[40px] py-[30px] rounded-br-[78px] text-xl whitespace-nowrap"
         >
           UX Guidelines Explorer
@@ -42,7 +43,7 @@ export default function Header() {
             Scan
           </Link>
           <a
-            href="https://github.com/lincoln-araujo"
+            href="https://github.com/lincoln-araujo/ux-guideline-explorer"
             target="_blank"
             rel="noreferrer"
             className="hover:underline"
@@ -87,28 +88,29 @@ export default function Header() {
           md:hidden overflow-hidden 
           ${open ? "max-h-64" : "max-h-0"}
           transition-[max-height] duration-300 ease-in-out
+          bg-primary-light border-b border-[#e9e9e9]/35 shadow-2xl
         `}
       >
-        <div className="flex flex-col gap-2 px-6 py-3">
+        <div className="flex flex-col">
           <Link
             href="/guidelines"
-            className="py-2 hover:underline"
+            className="px-6 py-3 hover:underline border-b border-[#e9e9e9]/35 flex justify-between items-center arrow-right"
             onClick={() => setOpen(false)}
           >
             Explore
           </Link>
           <Link
             href="/scan"
-            className="py-2 hover:underline"
+            className="px-6 py-3 hover:underline border-b border-[#e9e9e9]/35 flex justify-between items-center arrow-right"
             onClick={() => setOpen(false)}
           >
             Scan
           </Link>
           <a
-            href="https://github.com/Lincoln-Araujo/ux-guidelines-explorer"
+            href="https://github.com/lincoln-araujo/ux-guideline-explorer"
             target="_blank"
             rel="noreferrer"
-            className="py-2 hover:underline"
+            className="px-6 py-3 hover:underline flex justify-between items-center arrow-right"
             onClick={() => setOpen(false)}
           >
             GitHub

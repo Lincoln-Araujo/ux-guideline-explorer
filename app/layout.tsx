@@ -1,12 +1,12 @@
-import "./globals.css";
+import "../styles/globals.css";
 import { Inter } from "next/font/google";
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 
 const inter = Inter({
   subsets: ["latin"],
-  display: "swap", 
-  variable: "--font-inter", 
+  display: "swap",
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
@@ -17,9 +17,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} font-sans`}>
+      <body className={`${inter.variable} font-sans bg-primary text-white min-h-dvh`}>
         <Header />
-        <main id="main" className="mx-auto max-w-5xl px-4 py-8">
+        <main id="main" className="w-dvw h-dvh p-0 m-0">
           {children}
         </main>
       </body>

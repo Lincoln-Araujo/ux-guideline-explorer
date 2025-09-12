@@ -1,14 +1,30 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-/* Better focus visibility */
-:focus-visible {
-  outline: 2px solid transparent;
-  box-shadow: 0 0 0 3px rgb(59 130 246 / 0.6); /* Tailwind's ring-ish */
+@theme {
+  --color-primary: #239BA7;
+  --color-primary-dark: #157882;
+  --color-primary-light: #3C9DA7;
+  --color-secondary: #F29F05;
+  --color-secondary-dark: #C77600;
+  --color-secondary-light: #F2B705;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui;
 }
 
-/* Improve readability */
-html {
-  scroll-behavior: smooth;
+:focus-visible {
+  outline: 2px solid transparent;
+  box-shadow: 0 0 0 3px rgb(59 130 246 / 0.6);
+}
+
+html { scroll-behavior: smooth; }
+
+@layer base { body { @apply bg-primary text-white; } } 
+
+.arrow-right::after {
+  content: url('/arrow-right.svg');
+  display: inline-block;
+  margin-left: 16px;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
 }
