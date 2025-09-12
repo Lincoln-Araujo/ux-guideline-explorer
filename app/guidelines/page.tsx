@@ -43,7 +43,7 @@ export default function GuidelinesPage() {
         image={{ src: listImg, alt: "Guidelines list", priority: true }}
         fullHeight
       >
-        <div className="relative h-full min-h-0 w-full overflow-auto px-4 py-8">          
+        <div className="relative h-full min-h-0 w-full overflow-auto px-4 py-8 md:pt-30 md:pl-30 md:pr-8">          
           <h1 className="text-2xl font-semibold">Guidelines</h1>
           <p className="mt-2 text-slate-700">Browse, search, and filter UX guidelines.</p>
           <div className="grid gap-4 sm:grid-cols-2">

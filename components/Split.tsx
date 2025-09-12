@@ -56,7 +56,7 @@ export default function Split({
           "row-start-2 col-start-1",
           "md:row-start-1",
           imageLeft ? "md:col-start-2" : "md:col-start-1",
-          "min-w-0 min-h-0", "md:pt-30", "px-8", 
+          "min-w-0 min-h-0",
         ].join(" ")}
       >
         
