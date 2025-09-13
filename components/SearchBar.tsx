@@ -8,7 +8,7 @@ type Props = {
 export default function SearchBar({ value, onChange }: Props) {
   return (
     <div className="w-full">
-      <label htmlFor="search" className="block text-sm font-medium">
+      <label htmlFor="search" className="block text-sm text-white font-regular">
         Search guidelines (title or summary)
       </label>
       <input
@@ -16,7 +16,7 @@ export default function SearchBar({ value, onChange }: Props) {
         type="search"
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="mt-1 w-full rounded border px-3 py-2 outline-none focus-visible:ring"
+        className="mt-1 w-full rounded border border-[#ddd] bg-white text-slate-700 px-3 py-2 outline-none focus-visible:ring"
         placeholder="e.g. checkout, empty state…"
       />
     </div>

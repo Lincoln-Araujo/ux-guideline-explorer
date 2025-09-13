@@ -60,7 +60,7 @@ export default function Split({
         ].join(" ")}
       >
         
-        <div className="h-full w-full overflow-auto ">
+        <div className="h-full w-full md:overflow-auto ">
           {children}
         </div>
       </div>

@@ -18,7 +18,7 @@ export default function Page() {
         {/* CTA Button */}
         <Link
           href="/guidelines"
-          className=" relative z-1 w-fit mt-6 flex rounded-md bg-secondary px-6 py-3 font-semibold text-[#121214] shadow-md hover:bg-secondary-light active:bg-secondary-dark focus:outline-none focus:ring-2 focus:ring-secondary-light"
+          className=" relative z-1 w-fit mt-6 flex rounded-[15] bg-secondary px-6 py-3 font-semibold text-[#121214] shadow-md hover:bg-secondary-light active:bg-secondary-dark focus:outline-none focus:ring-2 focus:ring-secondary-light border border-secondary-light"
         >
           Explore Guidelines
         </Link>

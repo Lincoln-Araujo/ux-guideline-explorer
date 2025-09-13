@@ -1,82 +1,106 @@
-# UX Guidelines Explorer
+# UX Guidelines Explorer  
 
-![Next.js](https://img.shields.io/badge/Next.js-13+-000000?logo=nextdotjs&logoColor=white&style=for-the-badge)
-![TypeScript](https://img.shields.io/badge/TypeScript-5+-3178C6?logo=typescript&logoColor=white&style=for-the-badge)
-![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3+-38B2AC?logo=tailwindcss&logoColor=white&style=for-the-badge)
+![Next.js](https://img.shields.io/badge/Next.js-15-000000?logo=nextdotjs&logoColor=white&style=for-the-badge)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white&style=for-the-badge)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3-38B2AC?logo=tailwindcss&logoColor=white&style=for-the-badge)
 ![Vitest](https://img.shields.io/badge/Tested_with-Vitest-6E9F18?logo=vitest&logoColor=white&style=for-the-badge)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)
 
 ---
 
-## Introduction  
+## 📖 About the Project  
 
-Welcome to my portfolio repository! 👋  
+**UX Guidelines Explorer** is a demo web application that lets you:  
+- Browse a catalog of UX guidelines with search, filtering, sorting, and pagination.  
+- Open detailed guideline pages with Do/Don’t lists and examples.  
+- Try a playful `/scan` tool that “analyzes” a URL and maps it to relevant guidelines.  
 
-Here I’ve collected a mix of **front-end projects, prototypes, and case notes** that highlight my experience in:  
+This project started as a way to **apply concepts I studied during my postgraduate course in UX Engineering** — where I first learned **Next.js and Tailwind CSS** — and evolved into a playground to explore accessibility, UI patterns, and state management in practice.  
 
-- **Building responsive, accessible interfaces** (WCAG)  
-- **Developing with React, Next.js, Tailwind, and Node.js**  
-- **Creating reusable components and design patterns**  
-- **Collaborating with designers, editors, and stakeholders** to deliver user-centered solutions  
-- **Iterating quickly based on user and stakeholder feedback**  
+🔗 **Design file (Figma):** [UX Guidelines Explorer](https://www.figma.com/design/CTVrm4cm13PwE2LLFPyXcG/UX-Guidelines-Explorer?node-id=0-1&t=4Ll4zzGLD9l6HcdS-1)
 
 ---
 
-## Tech Stack  
+## 🛠 Tech Stack  
 
 - ⚛️ **Framework:** Next.js (App Router)  
-- 🎨 **Styling:** Tailwind CSS  
 - 📝 **Language:** TypeScript  
+- 🎨 **Styling:** Tailwind CSS  
 - 🧪 **Testing:** Vitest  
-- 📊 **Data handling:** JSON + custom filter functions  
-- 🖥️ **Other tools:** Accessibility best practices (WCAG), semantic HTML, ARIA  
+- 📊 **Data:** Static JSON + custom filter logic  
+- ♿ **Accessibility:** Skip links, semantic landmarks, ARIA, WCAG focus states  
 
 ---
 
-## Screenshots  
+## 🚀 Getting Started  
+
+Clone the repository and install dependencies:
+
+```bash
+git clone https://github.com/Lincoln-Araujo/ux-guidelines-explorer.git
+cd ux-guidelines-explorer
+pnpm install
+```
+
+Run the development server:
+
+```bash
+pnpm dev
+```
+
+Build and run in production:
+
+```bash
+pnpm build
+pnpm start
+```
+
+Run tests:
+
+```bash
+pnpm test
+```
+
+---
+
+## 🖼 Screenshots  
 
 ### Landing Page  
 ![Landing Page](./public/screenshots/landing.png)  
-*A clean landing page with a clear call-to-action to explore UX guidelines.*  
 
-### Guidelines List with Filters  
+### Guidelines with Filters  
 ![Guidelines List](./public/screenshots/list.png)  
-*Search, filter, and sort options allow users to quickly find relevant guidelines.*  
 
-### Detail Page (Do/Don’t & Examples)  
+### Detail Page  
 ![Detail Page](./public/screenshots/detail.png)  
-*Each guideline has a dedicated detail view with Do/Don’t lists and good/bad examples.*  
 
 ### Mock Scanner (/scan)  
 ![Scanner Page](./public/screenshots/scan.png)  
-*A playful scanner tool that analyzes a URL and maps findings to relevant guidelines.*  
 
 ---
 
-## Key Learnings  
+## 📚 Key Learnings  
 
 Through this project I was able to practice and demonstrate:  
 
-- 🔎 **Accessibility in practice** – implementing skip links, semantic landmarks, ARIA attributes, and focus-visible states to ensure WCAG-friendly UI.  
-- ⚛️ **Modern React patterns** – building with Next.js App Router, TypeScript, and Tailwind for a clean and maintainable front end.  
-- 📊 **State management for discoverability** – handling search, filters, sorting, and pagination in a way that improves user experience.  
-- 🧪 **Testing mindset** – writing unit tests with Vitest for filtering logic, proving reliability and maintainability.  
-- 🧠 **Product intuition** – going beyond code by adding a playful `/scan` feature, thinking like a UX engineer about user needs and iteration.  
-- 📚 **From theory to practice** – this project also gave me the chance to apply concepts I first saw during my postgraduate course in a more practical, real-world context.  
+- ♿ **Accessibility in practice** – skip links, semantic HTML, ARIA roles, focus-visible states.  
+- ⚛️ **Modern React patterns** – Next.js App Router + TypeScript + Tailwind.  
+- 🔎 **Discoverability** – handling search, filters, sort, and pagination for UX clarity.  
+- 🧪 **Testing mindset** – unit tests with Vitest for core filtering logic.  
+- 🧠 **UX/Product thinking** – adding the `/scan` tool as a playful feature, thinking beyond the code.  
+- 🎓 **From theory to practice** – putting into action concepts I first learned in my postgraduate UX Engineering course.  
 
 ---
 
-## Future Improvements  
+## 🌱 Future Improvements  
 
-This project is intentionally small in scope, but there are several ways it could be expanded:  
-
-- 🖼️ **Richer examples with visuals** – Add screenshots or small UI snippets alongside the “good” and “bad” examples for each guideline.  
-- 🔍 **More advanced filtering** – Allow multiple categories/severities at once, plus fuzzy search for better discoverability.  
-- 🌐 **Real data integration** – Replace the static JSON file with a database or API endpoint for live content.  
-- 🧪 **Automated tests coverage** – Extend unit tests (beyond `lib/filter`) and add end-to-end tests with Cypress or Playwright.  
-- 🎨 **Design polish** – Introduce a mini design system (buttons, form inputs, typography) to ensure consistency across components.  
-- 🤖 **Smarter scanner** – Evolve the `/scan` page into a real analysis tool, connecting URL content to guidelines via NLP/AI.  
+- 🖼 Richer guideline examples with UI visuals.  
+- 🔍 Advanced filtering (multi-category, fuzzy search).  
+- 🌐 Real data integration via API.  
+- 🧪 Expand automated test coverage (Cypress/Playwright).  
+- 🎨 Small design system for consistent UI patterns.  
+- 🤖 Smarter `/scan` powered by real analysis (NLP/AI).  
 
 ---
 
-✨ The goal is to provide a clear picture of how I combine **engineering skills and UX mindset** to deliver high-impact digital products.  
+✨ This project shows how I combine **front-end engineering skills with a UX mindset** to deliver accessible, user-centered digital products.  

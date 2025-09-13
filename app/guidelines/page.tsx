@@ -43,10 +43,12 @@ export default function GuidelinesPage() {
         image={{ src: listImg, alt: "Guidelines list", priority: true }}
         fullHeight
       >
-        <div className="relative h-full min-h-0 w-full overflow-auto px-4 py-8 md:pt-30 md:pl-30 md:pr-8">          
-          <h1 className="text-2xl font-semibold">Guidelines</h1>
-          <p className="mt-2 text-slate-700">Browse, search, and filter UX guidelines.</p>
-          <div className="grid gap-4 sm:grid-cols-2">
+        <div className="relative min-h-0 md:overflow-auto bg-ghost"> 
+          <header className="border-b border-[#e9e9e9]/35 pb-8">
+            <h1 className="text-[28px] md:text-[40px] font-bold">Guidelines</h1>
+            <p className="mt-2 text-white">Browse, search, and filter UX guidelines.</p>
+          </header>         
+          <div className="grid gap-4 md:grid-cols-2 sm:grid-cols-1 mt-6 border-b border-[#e9e9e9]/35 pb-8">
               <SearchBar
                 value={q}
                 onChange={(v) => {
@@ -71,19 +73,19 @@ export default function GuidelinesPage() {
                   resetPaging();
                 }}
               />
-            </div>
+          </div>
 
-            <p aria-live="polite" className="text-sm text-gray-700">
+            <p aria-live="polite" className="text-sm text-white mt-6 mb-2">
               Showing {total} guideline{total === 1 ? "" : "s"}
             </p>
 
             {total === 0 ? (
-              <div className="rounded border p-6 text-center">
+              <div className="rounded-lg bg-primary-dark p-6 text-center text-white">
                 <p>No guidelines found. Try clearing filters or broadening your search.</p>
               </div>
             ) : (
               <>
-                <div className="grid gap-4 sm:grid-cols-2">
+                <div className="grid gap-4 sm:grid-cols-2 bg-primary-dark p-6 rounded-lg">
                   {items.map((g) => (
                     <Card key={g.id} g={g} />
                   ))}
