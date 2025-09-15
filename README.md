@@ -10,12 +10,14 @@
 
 ## 📖 About the Project  
 
+✨ Built as a personal demo to practice **Next.js + Tailwind** and to explore workflows similar to those described in Baymard’s products.  
+
 **UX Guidelines Explorer** is a demo web application that lets you:  
 - Browse a catalog of UX guidelines with search, filtering, sorting, and pagination.  
 - Open detailed guideline pages with Do/Don’t lists and examples.  
 - Try a playful `/scan` tool that “analyzes” a URL and maps it to relevant guidelines.  
 
-This project started as a way to **apply concepts I studied during my postgraduate course in UX Engineering** — where I first learned **Next.js and Tailwind CSS** — and evolved into a playground to explore accessibility, UI patterns, and state management in practice.  
+This project started as a way to **apply concepts from my postgraduate course in UX Engineering**, and was inspired by Baymard’s description of its research catalog and scanner.  
 
 🔗 **Design file (Figma):** [UX Guidelines Explorer](https://www.figma.com/design/CTVrm4cm13PwE2LLFPyXcG/UX-Guidelines-Explorer?node-id=0-1&t=4Ll4zzGLD9l6HcdS-1)
 
@@ -81,7 +83,7 @@ pnpm test
 
 ## 📚 Key Learnings  
 
-Through this project I was able to practice and demonstrate:  
+Through this project I practiced and explored:  
 
 - ♿ **Accessibility in practice** – skip links, semantic HTML, ARIA roles, focus-visible states.  
 - ⚛️ **Modern React patterns** – Next.js App Router + TypeScript + Tailwind.  
